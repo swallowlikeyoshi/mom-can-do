@@ -5,7 +5,7 @@
 
 ## 설치
 
-ChatGPT 데스크톱 앱에서 권한을 Full access로 바꾼 뒤, 아래 문장을 붙여 넣으세요.
+ChatGPT 데스크톱 앱에서 권한을 가장 넓은 것(Full access, 한글 화면은 "전체"가 들어간 이름)으로 바꾼 뒤, 아래 문장을 붙여 넣으세요.
 
 ```
 이 주소의 스킬을 내 컴퓨터에 설치해줘: https://github.com/swallowlikeyoshi/mom-can-do
