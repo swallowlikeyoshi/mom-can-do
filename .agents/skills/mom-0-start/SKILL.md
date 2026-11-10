@@ -42,7 +42,8 @@ description: 엄마 강의 0 "준비 운동". ChatGPT 데스크톱 앱(Windows)�
 - 어머니께 위치를 말할 때는 경로 대신 말로 해요. 예: "문서 폴더 안 엄마강의 폴더".
 
 **기밀**
-- 강의 0에서 한 번 "회사 기밀, 주민번호, 계좌번호는 넣지 마세요"라고 말해요.
+- 소규모 회사라서 회사 이야기(매출, 직원, 제품, 거래 현황)는 편하게 넣어도 돼요. 막지 않아요.
+- **주민번호, 비밀번호, 계좌번호 같은 개인 정보만** 빼요. 강의 0에서 한 번 말해요.
 - 그 뒤로 계좌번호 같은 게 보여도 멈추지 않아요. "계좌번호는 다음부터 빼고 주시면 더 좋아요" 한 줄만 말하고 계속해요.
 
 **그만할 때**
@@ -56,7 +57,7 @@ description: 엄마 강의 0 "준비 운동". ChatGPT 데스크톱 앱(Windows)�
 | 블록 | 이름 (어머니께 말할 때) | 파일 |
 |---|---|---|
 | 1 | 권한 설정 | [references/block1-permission.md](references/block1-permission.md) |
-| 2 | 기밀 약속 | [references/block2-secret.md](references/block2-secret.md) |
+| 2 | 개인 정보 약속 | [references/block2-secret.md](references/block2-secret.md) |
 | 3 | 모델과 생각하기 | [references/block3-model.md](references/block3-model.md) |
 | 4 | 화면 캡처 | [references/block4-capture.md](references/block4-capture.md) |
 | 5 | 강의 부르기 | [references/block5-call-skill.md](references/block5-call-skill.md) |
@@ -87,7 +88,7 @@ description: 엄마 강의 0 "준비 운동". ChatGPT 데스크톱 앱(Windows)�
 1. 진도: `## 마친 강의`에 `- 강의 0 준비 운동 (<오늘>)`을 더하고, `마지막:`을 `강의 0 / 끝 / <오늘>`로 바꿔요.
 2. ✅ 확인 기준을 보여드려요 (건너뛴 블록은 ⏭로 표시):
    - ✅ 입력창 아래 권한이 가장 넓은 것(전체 허용)으로 되어 있다
-   - ✅ 회사 기밀, 주민번호, 계좌번호는 넣지 않는다
+   - ✅ 주민번호, 비밀번호, 계좌번호 같은 개인 정보는 넣지 않는다
    - ✅ 간단한 일과 틀리면 안 되는 일에 각각 무엇을 고를지 안다
    - ✅ 화면을 찍어서(Windows + Shift + S) 붙일 수 있다(Ctrl + V)
    - ✅ "엄마 강의", "막혔어"로 부를 수 있다
