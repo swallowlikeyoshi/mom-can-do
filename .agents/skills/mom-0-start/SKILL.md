@@ -1,6 +1,6 @@
 ---
 name: mom-0-start
-description: 엄마 강의 0 "준비 운동". ChatGPT 데스크톱 앱(Windows)의 권한을 가장 넓은 것(Full access, 한글 화면은 이름이 다를 수 있음)으로 바꾸고, 기밀 약속, 모델과 생각하기 고르기, 화면 캡처, 강의 부르는 법, 새 채팅 오가기를 대화로 하나씩 해봐요. "강의 0", "준비 운동", "엄마 강의 처음" 요청이나 mom-class가 넘겨줄 때 사용.
+description: 엄마 강의 0 "준비 운동". ChatGPT 데스크톱 앱(Windows)의 권한을 가장 넓은 것(Full access, 한글 화면은 이름이 다를 수 있음)으로 바꾸고, 컴퓨터 사용(GPT가 화면을 보고 대신 클릭하는 기능)을 켜고, 기밀 약속, 모델과 생각하기 고르기, 화면 캡처, 강의 부르는 법, 새 채팅 오가기를 대화로 하나씩 해봐요. "강의 0", "준비 운동", "엄마 강의 처음" 요청이나 mom-class가 넘겨줄 때 사용.
 ---
 
 # mom-0-start: 강의 0 준비 운동
@@ -46,6 +46,13 @@ description: 엄마 강의 0 "준비 운동". ChatGPT 데스크톱 앱(Windows)�
 - **주민번호, 비밀번호, 계좌번호 같은 개인 정보만** 빼요. 강의 0에서 한 번 말해요.
 - 그 뒤로 계좌번호 같은 게 보여도 멈추지 않아요. "계좌번호는 다음부터 빼고 주시면 더 좋아요" 한 줄만 말하고 계속해요.
 
+**컴퓨터 사용** (강의 0 블록 2에서 켰을 때)
+- 확인이 필요하면 캡처를 부탁하기 전에 **먼저 화면을 직접 봐요**. 앱 안의 설정(권한, 모델, 모드)이 틀려 있으면 직접 바꿔 드려요.
+- 마우스를 움직이기 전에 꼭 말해요: "지금부터 제가 마우스를 움직일게요. 끝날 때까지 손을 떼 주세요." 끝나면 "다 됐어요, 이제 쓰셔도 돼요."
+- 하지 않는 것: 회사 보안 프로그램·Windows 보안 설정, 은행·홈택스·결제 화면, 관리자 암호 입력. 필요하면 멈추고 `mom-help` 📨.
+- 어머니가 직접 하셔야 배우는 것(캡처, 새 채팅 열기, 부탁 쓰기)은 대신 하지 않아요.
+- 컴퓨터 사용이 꺼져 있거나 안 되는 PC면 예전처럼 캡처를 부탁해요.
+
 **그만할 때**
 - "그만", "나중에", "오늘은 여기까지"라고 하시면 진도 파일의 `마지막:` 줄에 지금 강의와 블록, 날짜를 적고 "다음에 '엄마 강의'라고 하시면 여기서 이어서 해요"라고 말하고 끝내요.
 
@@ -57,11 +64,12 @@ description: 엄마 강의 0 "준비 운동". ChatGPT 데스크톱 앱(Windows)�
 | 블록 | 이름 (어머니께 말할 때) | 파일 |
 |---|---|---|
 | 1 | 권한 설정 | [references/block1-permission.md](references/block1-permission.md) |
-| 2 | 개인 정보 약속 | [references/block2-secret.md](references/block2-secret.md) |
-| 3 | 모델과 생각하기 | [references/block3-model.md](references/block3-model.md) |
-| 4 | 화면 캡처 | [references/block4-capture.md](references/block4-capture.md) |
-| 5 | 강의 부르기 | [references/block5-call-skill.md](references/block5-call-skill.md) |
-| 6 | 새 채팅 오가기 | [references/block6-new-chat.md](references/block6-new-chat.md) |
+| 2 | 컴퓨터 사용 켜기 | [references/block2-computer.md](references/block2-computer.md) |
+| 3 | 개인 정보 약속 | [references/block3-secret.md](references/block3-secret.md) |
+| 4 | 모델과 생각하기 | [references/block4-model.md](references/block4-model.md) |
+| 5 | 화면 캡처 | [references/block5-capture.md](references/block5-capture.md) |
+| 6 | 강의 부르기 | [references/block6-call-skill.md](references/block6-call-skill.md) |
+| 7 | 새 채팅 오가기 | [references/block7-new-chat.md](references/block7-new-chat.md) |
 
 ## 시작할 때
 
@@ -76,18 +84,19 @@ description: 엄마 강의 0 "준비 운동". ChatGPT 데스크톱 앱(Windows)�
   ```
 - "다시 하기"로 넘겨받았으면 진도와 상관없이 블록 1부터 해요.
 - "블록 N부터"로 넘겨받았거나 진도의 `마지막:`이 강의 0의 블록 N이면, 블록 N부터 해요. 한 문장으로 알려드려요: "지난번에 이어서 N번째, '<이름>'부터 할게요." 앞 블록은 다시 하지 않아요.
-- 처음이면 인사 한두 문장 + "오늘은 여섯 가지를 해요. 30분쯤 걸려요. 중간에 그만두셔도 다음에 이어서 할 수 있어요." 그리고 바로 블록 1의 첫 턴.
+- 처음이면 인사 한두 문장 + "오늘은 일곱 가지를 해요. 40분쯤 걸려요. 중간에 그만두셔도 다음에 이어서 할 수 있어요." 그리고 바로 블록 1의 첫 턴.
 
 ## 블록마다
 
 - 블록을 **시작할 때** 진도의 `마지막:` 줄을 `강의 0 / 블록 N / <오늘>`로 바꿔요.
 - 블록 안에서 못 한 것(회사 보안, 화면에 없는 버튼)은 `## 건너뛴 블록`에 한 줄로 적고 다음 블록으로 가요.
 
-## 강의를 마칠 때 (블록 6 통과 뒤)
+## 강의를 마칠 때 (블록 7 통과 뒤)
 
 1. 진도: `## 마친 강의`에 `- 강의 0 준비 운동 (<오늘>)`을 더하고, `마지막:`을 `강의 0 / 끝 / <오늘>`로 바꿔요.
 2. ✅ 확인 기준을 보여드려요 (건너뛴 블록은 ⏭로 표시):
    - ✅ 입력창 아래 권한이 가장 넓은 것(전체 허용)으로 되어 있다
+   - ✅ 컴퓨터 사용이 켜져 있고, GPT가 움직이는 동안 손을 떼고 기다릴 수 있다
    - ✅ 주민번호, 비밀번호, 계좌번호 같은 개인 정보는 넣지 않는다
    - ✅ 간단한 일과 틀리면 안 되는 일에 각각 무엇을 고를지 안다
    - ✅ 화면을 찍어서(Windows + Shift + S) 붙일 수 있다(Ctrl + V)
