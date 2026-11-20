@@ -60,7 +60,23 @@ try {
 "성공: $path"
 ```
 
-**엑셀이 없거나 위 스크립트가 실패하면** 다시 실행하지 않고, 같은 내용을 `연습1_오류있는장부.csv`(UTF-8 BOM, `Out-File -Encoding UTF8`)로 만들어요. D7은 `="120,000원"`(엑셀이 숫자로 바꾸지 않게 글자 수식으로), D12는 `=D2+D3+...+D11` 문자열 그대로, E2는 `=#REF!`. 진도 맨 아래에 `화면 이름: 연습 파일 = csv`를 적어요.
+**위 스크립트가 실패하면** 다시 실행하지 않고, 먼저 엑셀(또는 한셀 같은 표 프로그램)이 있는지 봐요: `Test-Path "HKLM:\SOFTWARE\Classes\.xlsx"` 또는 `(Get-ItemProperty 'Registry::HKEY_CLASSES_ROOT\.xlsx' -ErrorAction SilentlyContinue)`.
+- **표 프로그램이 있으면**: 아래 내용을 **그대로** `연습1_오류있는장부.csv`로 저장해요 (`Set-Content -Encoding UTF8`, PowerShell 5.1에선 BOM이 붙어 엑셀에서 한글이 안 깨져요). 진도 맨 아래에 `화면 이름: 연습 파일 = csv`를 적어요.
+  ```
+  날짜,거래처,입금,출금,전월 이월
+  2026-10-02,한빛상사,1200000,0,=#REF!
+  2026-10-05,대성유통,0,350000,
+  2026-10-08,미래문구,0,84000,
+  2026-10-12,서울식자재,0,465000,
+  2026-10-15,한빛상사,800000,0,
+  2026-10-18,대성유통,0,"=""120,000원""",
+  2026-10-21,미래문구,0,56000,
+  2026-10-24,서울식자재,0,512000,
+  2026-10-27,한빛상사,1500000,0,
+  2026-10-30,대성유통,0,230000,
+  ,합계,=SUM(C2:C11),=D2+D3+D4+D5+D6+D7+D8+D9+D10+D11,
+  ```
+- **표 프로그램이 없으면**: 이 강의는 할 수 없어요. 진도 `## 건너뛴 블록`에 `- 강의 1 전체: 엑셀 없음 (<날짜>)`을 적고, "회사 컴퓨터에 엑셀이 없어서 이 연습은 아들이랑 같이 해요"라고 한 뒤 `mom-help`의 📨로 아들에게 보낼 내용을 만들어 드려요.
 
 ## 확인 스크립트 (블록 2 확인 때, 한 번에 실행)
 
@@ -69,9 +85,10 @@ $path = Join-Path (Join-Path ([Environment]::GetFolderPath('Desktop')) '엄마�
 $xl = New-Object -ComObject Excel.Application; $xl.Visible = $false; $xl.DisplayAlerts = $false
 try {
   $wb = $xl.Workbooks.Open($path, 0, $true); $ws = $wb.Worksheets.Item('10월')
-  "D7=" + $ws.Range('D7').Value2 + " (" + $ws.Range('D7').Value2.GetType().Name + ")"
+  $v = $ws.Range('D7').Value2
+  if ($v -ne $null) { "D7=" + $v + " (" + $v.GetType().Name + ")" } else { "D7=(비어 있음)" }
   "D12=" + $ws.Range('D12').Text + " / 값=" + $ws.Range('D12').Value2
   $wb.Close($false)
 } finally { $xl.Quit(); [void][Runtime.InteropServices.Marshal]::ReleaseComObject($xl) }
 ```
-통과: D7이 `Double` 120000이고 D12 값이 1817000. (csv면 파일을 `Get-Content -Encoding UTF8`로 읽어 D7 자리가 `120000`인지 봐요.)
+통과: **D12 값이 1817000**이고 D7이 120000으로 읽히면(숫자 120000이든 글자 "120000"이든) 통과예요. (csv면 파일을 `Get-Content -Encoding UTF8`로 읽어 D7 자리가 `120000`인지 봐요.)
